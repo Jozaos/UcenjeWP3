@@ -22,7 +22,7 @@
 --vaucer bit
 --);
 
-
+--evo promjena
 --create table grupe(
 --	sifra			int,
 --	naziv			varchar(5),
