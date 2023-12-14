@@ -1,59 +1,74 @@
-
---kreiranje baze
---create database edunovawp3; 
-
---brisanje baze
+use master;
+go
+drop database if exists edunovawp3;
+go
+-- ovo je komentar
+create database edunovawp3 collate Croatian_CI_AS;
+go
 --drop database edunovawp3;
+--use master
+use edunovawp3;
 
---odabir baze podataka
---use master;
---use edunovawp3;
+create table smjerovi(
+sifra int not null primary key identity(1,1),
+naziv varchar(50) not null,
+trajanje int null, --null se ne piše. Ako ne piše not null onda se podrazumjeva null
+cijena decimal(18,2), -- iako ništa ne piše je null
+vaucer bit
+);
 
---varchar(10) je do 10 znakova, ne mora biti svih 10
---char(10) je svih 10 znakova...
+create table grupe(
 
---ctrl k+c komentira vi�e odjednom, ctrl k+u mice komentar
+	sifra			int			not null primary key identity(1,1),
+	naziv			varchar(5)	not null,
+	smjer			int			not null,
+	datumpocetka	datetime,
+	maxpolaznika	int			not null,
+	predavac		int
 
---create table smjerovi(
---sifra int,
---naziv varchar(50),
---trajanje int,
---cijena decimal(18,2),
---vaucer bit
---);
+);
 
---evo promjena
---create table grupe(
---	sifra			int,
---	naziv			varchar(5),
---	smjer			int,
---	datumpocetka	datetime,
---	maxpolaznika	int,
---	predavac		int
---);
 
---create table polaznici(
---sifra			int,
---ime				varchar(50),
---prezime			varchar(50),
---email			varchar(100),
---oib				char(11),
---broj_ugovora	varchar(10)	
---);
+create table polaznici(
+sifra int not null primary key identity(1,1),
+ime varchar(50) not null,
+prezime varchar(50) not null,
+email varchar(100),
+oib char(11),
+brojugovora varchar(10)
+);
 
---create table predavaci(
---id			int,
---ime			varchar(50),
---prezime		varchar(50),
---email		varchar(100),
---oib			char(11),
---iban		varchar(50)
---);
+create table predavaci(
+sifra int not null primary key identity(1,1),
+ime varchar(50) not null,
+prezime varchar(50) not null,
+email varchar(100) not null,
+oib char(11),
+iban varchar(50)
+);
 
---drop table predavaci    -> obrise tablicu
+-- ako nešto pogriješim onda mogu obrisati tablicu pa ponovo kreirati
+--drop table predavaci;
 
---create table clanovi(
---grupa			int,
---polaznik		int
---);
+
+create table clanovi(
+grupa int not null,
+polaznik int not null
+);
+
+-- kreiranje vanjskih ključeva
+alter table grupe add foreign key (smjer) references smjerovi(sifra);
+alter table grupe add foreign key (predavac) references predavaci(sifra);
+
+alter table clanovi add foreign key (grupa) references grupe(sifra);
+alter table clanovi add foreign key (polaznik) references polaznici(sifra);
+
+
+
+
+
+
+
+
+
 
