@@ -52,3 +52,16 @@ select concat(b.ime,' ',b.prezime) as Autor
 from katalog a 
 inner join autor b on a.autor=b.sifra
 inner join mjesto c on a.mjesto=c.sifra where c.naziv='Zagreb';
+
+select a.ime,a.prezime,b.naslov
+from autor a left join katalog b on a.sifra=b.autor where b.naslov is null;
+
+delete a
+from autor a left join katalog b on a.sifra=b.autor
+where b.naslov is null;
+
+select concat('Plemeniti ',b.ime) as Plemstvo, c.naziv
+from katalog a 
+inner join autor b on a.autor=b.sifra
+inner join mjesto c on a.mjesto=c.sifra
+where c.naziv like '%a%';
