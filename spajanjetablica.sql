@@ -28,3 +28,27 @@ update grupe set predavac=2 where sifra=2;
 select a.naziv as smjer, b.naziv as grupa
 from smjerovi a left join grupe b
 on a.sifra=b.smjer where b.naziv is not null order by 2;
+
+
+use knjiznica;
+
+select a.naslov
+from katalog a inner join autor b on a.autor=b.sifra
+where b.ime='August' and b.prezime='Šenoa';
+
+select a.naslov
+from katalog a inner join mjesto b on a.mjesto=b.sifra
+where b.naziv='Osijek';
+
+select naziv from izdavac 
+where naziv like '%d.o.o.%' or naziv like '%doo%'or naziv like '%d.o.o%';
+
+select * from autor;
+insert into autor(sifra,ime,prezime,datumrodenja) values (4,'Josip','Rebolj','2000-02-01');
+
+select ime,prezime from autor where datumrodenja between '2000-01-01' and '2000-12-31';
+
+select concat(b.ime,' ',b.prezime) as Autor
+from katalog a 
+inner join autor b on a.autor=b.sifra
+inner join mjesto c on a.mjesto=c.sifra where c.naziv='Zagreb';
