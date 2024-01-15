@@ -188,9 +188,6 @@ select * from odabrani;
 
 drop table odabrani;
 
-use knjiznica;
-
-select * from katalog where naslov like '%ljubav%' and sifra not in (2784, 2938, 3063, 2541); 
-
-
-select count(*) from mjesto;
+--use knjiznica;
+--select * from katalog where naslov like '%ljubav%' and sifra not in (2784, 2938, 3063, 2541); 
+--select count(*) from mjesto;
