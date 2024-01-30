@@ -10,7 +10,7 @@ namespace UcenjeCS
     {
         public static void Izvedi()
         {
-            string Ime();
+            string Ime;
             Console.Write("Unesi ime: ");
 
             Ime = Console.ReadLine();
