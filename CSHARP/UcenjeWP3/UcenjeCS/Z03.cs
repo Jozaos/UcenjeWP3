@@ -6,22 +6,16 @@ using System.Threading.Tasks;
 
 namespace UcenjeCS
 {
-    internal class E01UlazIzlaz
+    internal class Z03
     {
 
         public static void Izvedi()
         {
+            // Program unosi tri cijela broja
+            // program ispisuje najmanji
+            // DZ
 
-            string Ime;
-            Console.Write("Unesi ime: ");
-
-            Ime = Console.ReadLine();
-
-            Console.WriteLine(Ime);
 
         }
-
-
-
     }
 }

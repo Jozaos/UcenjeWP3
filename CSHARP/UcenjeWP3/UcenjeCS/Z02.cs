@@ -6,22 +6,15 @@ using System.Threading.Tasks;
 
 namespace UcenjeCS
 {
-    internal class E01UlazIzlaz
+    internal class Z02
     {
 
         public static void Izvedi()
         {
-
-            string Ime;
-            Console.Write("Unesi ime: ");
-
-            Ime = Console.ReadLine();
-
-            Console.WriteLine(Ime);
+            // Program unosi dva broja
+            // Ispisuje veći
+            // DZ
 
         }
-
-
-
     }
 }

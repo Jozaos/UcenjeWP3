@@ -4,21 +4,33 @@ namespace WebAPI.Controllers
 {
     [ApiController]
     [Route("E01")]
-    public class E01UlazIzlaz:ControllerBase
+    public class E01UlazIzlaz : ControllerBase
     {
+
+        // Ovdje počinje ruta
         [HttpGet]
-        [Route ("Hello")]
+        [Route("Hello")]
         public string HelloWorld(string Ime)
         {
-            return "Dobrodošao, " + Ime;
+            return "Dobro večer " + Ime;
         }
+        // Ovdje završava ruta
 
+
+
+
+
+
+
+
+        // Ovdje počinje ruta
         [HttpGet]
         [Route("zad1")]
-        public int Zad1(int a, int b)
+        public int Zad1(int prvi, int drugi)
         {
-            return a+b;
+            return prvi + drugi;
         }
+        // Ovdje završava ruta
 
     }
 }
