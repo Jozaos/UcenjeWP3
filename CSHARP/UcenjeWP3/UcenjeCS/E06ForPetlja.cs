@@ -56,14 +56,58 @@ namespace UcenjeCS
             //}
 
 
-            for (int i = 1;i <= 10; i++)
+            //for (int i = 1;i <= 10; i++)
+            //{
+            //    for(int j = 1;j <= 10; j++)
+            //    {
+            //        Console.Write(i*j +" ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+            //for(int i=0; i < 10; i++)
+            //{
+            //    if (i == 3)
+            //    {
+            //        continue;
+            //    }
+
+            //    Console.WriteLine(i);
+            //}
+
+
+            //for(int i=0; i < 10; i++)
+            //{
+            //    if(i == 3)
+            //    {
+            //        break;
+            //    }
+            //    Console.WriteLine(i);
+            //}
+
+
+        //    for(int i = 0; i < 10; i++)
+        //    {
+        //        for (int j = 0; j < 10; j++)
+        //        {
+        //            goto labela;
+        //            //break;
+        //        }
+        //    }
+
+
+        //labela:
+        //    Console.WriteLine("nastavljam nakon vanjske petlje");
+
+
+            for(; ; )
             {
-                for(int j = 1;j <= 10; j++)
-                {
-                    Console.Write(i*j +" ");
-                }
-                Console.WriteLine();
+                Console.WriteLine(new Random().NextInt64(1,100));
+                break;
             }
+
+
 
 
         }
