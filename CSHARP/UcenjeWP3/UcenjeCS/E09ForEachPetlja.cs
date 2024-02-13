@@ -12,13 +12,13 @@ namespace UcenjeCS
         {
             string grad = "Osijek";
 
-            for (int i = 0;i<grad.Length;i++)
+            for (int i = 0; i < grad.Length; i++)
             {
                 Console.WriteLine(grad[i]);
             }
 
 
-            foreach(var c in grad)
+            foreach (var c in grad)
             {
                 Console.WriteLine(c);
             }
@@ -30,9 +30,9 @@ namespace UcenjeCS
             }
 
 
-            int[] niz=new int[] {2,3,4,5,6,7};
+            int[] niz = new int[] { 2, 3, 4, 5, 6, 7 };
 
-            foreach(var i in niz)
+            foreach (var i in niz)
             {
                 Console.Write(i);
             }
