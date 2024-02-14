@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace UcenjeCS
             {
                 if (tezina < 90.5)
                 {
-                    if (ime == "%a")
+                    if (ime.EndsWith('a'))
                     {
                         Console.WriteLine("Ti, "+ime+" si zgodna.");
                     }
