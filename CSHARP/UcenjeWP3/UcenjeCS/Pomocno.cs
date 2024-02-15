@@ -66,7 +66,7 @@ namespace UcenjeCS
             string s;
             for(; ; )
             {
-                Console.WriteLine(Poruka+": ");
+                Console.Write(Poruka+": ");
                 s = Console.ReadLine().Trim();
                 if (s.Length == 0)
                 {
