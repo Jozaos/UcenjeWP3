@@ -19,6 +19,7 @@ namespace UcenjeCS
 
             if(visina>170 && visina < 190)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 if (tezina < 90.5)
                 {
                     if (ime.EndsWith('a'))

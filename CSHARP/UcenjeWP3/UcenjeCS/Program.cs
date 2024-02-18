@@ -2,11 +2,11 @@
 
 using UcenjeCS;
 
-UcenjeCS.E12KlasaObjekt.Program.Izvedi();
+//UcenjeCS.E12KlasaObjekt.Program.Izvedi();
 
 //E11Rekurzija.Izvedi();
 
-//Z07.Izvedi();
+Z07.Izvedi();
 
 //Z06.Izvedi();
 
