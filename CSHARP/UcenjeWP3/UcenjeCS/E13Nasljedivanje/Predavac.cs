@@ -10,6 +10,10 @@ namespace UcenjeCS.E13Nasljedivanje
     {
         
         public string? Iban { get; set; }
+        public override string ToString()
+        {
+            return Ime + " " + Prezime+", Iban: "+Iban;
+        }
 
     }
 }

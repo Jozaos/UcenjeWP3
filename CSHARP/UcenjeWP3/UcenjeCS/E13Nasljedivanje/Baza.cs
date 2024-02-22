@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace UcenjeCS.E13Nasljedivanje
 {
-    internal class OsobaImpl:Osoba
+    internal class Baza
     {
+        public Baza(string Naziv) {
+            this.Naziv = Naziv;
+        }
+        public string? Naziv { get; set; }
+
+
     }
 }
