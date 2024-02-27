@@ -2,7 +2,9 @@
 
 using UcenjeCS;
 
-new UcenjeCS.E13Nasljedivanje.Program();
+new UcenjeCS.E14VjezbanjeRadaSObjektima.Program();
+
+//new UcenjeCS.E13Nasljedivanje.Program();
 
 //UcenjeCS.E12KlasaObjekt.Program.Izvedi();
 
