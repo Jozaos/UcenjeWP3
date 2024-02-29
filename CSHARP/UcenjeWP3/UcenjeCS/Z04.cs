@@ -8,27 +8,9 @@ namespace UcenjeCS
 {
     internal class Z04
     {
-        public static void Izvedi()
-        {
-            Console.WriteLine("Unesi prvi cijeli broj: ");
-           int a=int.Parse(Console.ReadLine());
-            Console.WriteLine("Unesi drugi cijeli broj: ");
-           int b=int.Parse(Console.ReadLine());
-            int manji = a < b ? a : b;
-            int veci= a>b ? a : b;
-            for(int i=manji; i <= veci; i++)
-            {
 
-                if (i % 2 == 1)
-                {
-                    Console.WriteLine(i);
-                }
-                
-                
-            }
-            
-
-
-        }
+        // Program od korisnika unosi dva cijela broja
+        // Program ispisuje sve neparne brojeve
+        // Između dva unesena broja
     }
 }

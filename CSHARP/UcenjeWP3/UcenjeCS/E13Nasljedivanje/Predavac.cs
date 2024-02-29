@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace UcenjeCS.E13Nasljedivanje
 {
-    internal class Predavac:Osoba
+    // Jedna klasa može nasljediti samo jednu nadklasu
+    internal class Predavac:Osoba // Klasa Predavac nasljeđuje klasu osoba
     {
-        
         public string? Iban { get; set; }
+
         public override string ToString()
         {
-            return Ime + " " + Prezime+", Iban: "+Iban;
+            return Ime + " " + Prezime + ": " + Iban;
         }
-
     }
 }

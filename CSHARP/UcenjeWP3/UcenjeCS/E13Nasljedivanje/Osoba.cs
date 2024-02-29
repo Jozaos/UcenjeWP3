@@ -6,26 +6,27 @@ using System.Threading.Tasks;
 
 namespace UcenjeCS.E13Nasljedivanje
 {
-    internal abstract class Osoba:Object
+    // Apstraktna klasa je ona klasa koja nema implementaciju (instancu)
+    // Koristi se za objedinjavanje zajedničkih svojstava i metoda koje će netko nasljediti
+    // U OOP jezicima uvijek ima jedna klasa koju svi nasljeđuju htjeli to ili ne
+    internal abstract class Osoba:Object // :Object nije potrebno pisati
     {
-
-        
+        // prazan (empty) konstruktor
         public Osoba() { }
 
-        public Osoba(string Ime, string Prezime)
+        // puni (full) konstruktor
+        public Osoba(string ime, string prezime)
         {
-            this.Ime = Ime;
-            this.Prezime = Prezime;
+            this.Ime = ime;
+            this.Prezime = prezime;
         }
-
-
 
         public string? Ime { get; set; }
         public string? Prezime { get; set; }
 
         public override string ToString()
         {
-            return Ime+" "+Prezime;
+            return Ime + " " + Prezime;
         }
     }
 }

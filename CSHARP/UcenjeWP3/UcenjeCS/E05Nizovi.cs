@@ -8,60 +8,89 @@ namespace UcenjeCS
 {
     internal class E05Nizovi
     {
+
         public static void Izvedi()
         {
+            // eng. Arrays
+            // još na HR polja
+
+            // JEDNODIMENZIONALNI NIZOVI
+
             int[] Temperature = new int[6];
-            Temperature[0] = 1;
-            Temperature[Temperature.Length-1] = 2;
+            Temperature[0] = 1; // [0] ovo je indeks niza, 1 je vrijednost
+            Temperature[Temperature.Length-1] = 2; // zadnje mjesto
+
             Console.WriteLine(Temperature);
             Console.WriteLine(string.Join(",",Temperature));
 
+            string[] gradovi = new string[3];
+            gradovi[0] = "Osijek";
+            gradovi[1] = "Zagreb";
+            gradovi[2] = "Donji Miholjac";
 
-            string[] Gradovi = new string[3];
-            Gradovi[0] = "Osijek";
-            Gradovi[1] = "Donji Miholjac";
-            Gradovi[2] = "Zagreb";
+            Console.WriteLine(string.Join(" ",gradovi));
 
-            Console.WriteLine(string.Join(", ",Gradovi));
+            // skraćeni način definiranja niza
+            int[] brojevi = { 2, 3, 3, 4, 7, 5, 5, 4 };
 
-            int[] Brojevi = { 2, 3, 4, 5, 6, 7, 8, 6, 5};
-            Console.WriteLine(string.Join(" ",Brojevi));
-            Console.WriteLine(Brojevi[4]);
-            Console.WriteLine(Brojevi[0]);
-            Console.WriteLine(Brojevi[Brojevi.Length-1]);
+            // ispišite broj 7
+            Console.WriteLine(brojevi[4]);
 
-            int[,] Tablica =
+            // prvi element iza brojevi
+            Console.WriteLine(brojevi[0]);
+
+            // zadnji element niza
+            Console.WriteLine(brojevi[brojevi.Length-1]);
+
+
+            // DVODIMENZIONALNI NIZ - matrica (tablica)
+
+            int[,] tablica =
             {
-                {1,2,3 },
+                {1,2,3},
                 {4,5,6},
                 {7,8,9}
             };
-            Console.WriteLine(Tablica[1,2]);
+
+            // Ispisati 6
+            Console.WriteLine(tablica[1,2]);
+
+            // Trodimenzionalni niz
+            int[,,] kocka = new int[10,10,10]; // koliko elemenata mogu pohraniti?
+
+            // Viđedimenzionalni nizovi
+
+            int[,,,,,] zvjezdaneStaze;
 
 
-            int[,,] Kocka = new int[10, 10, 10];
+            string grad = "Osijek"; // string je niz znakova
 
-
-            int[,,,,,] ZvjezdaneStaze;
-
-            string grad = "Osijek";
-            Console.WriteLine(grad[3]);
+            //Ispišite j
+            Console.WriteLine(grad[3]); // ispisao je char
 
             char znak = 'j';
-            Console.WriteLine((int)znak);
 
+            Console.WriteLine(znak);
+
+            Console.WriteLine((int)znak);
 
 
 
             int[] niz = { 1, 2, 3, 4, 5 };
 
-            int i = 0;
-            i++;
-            
-           
+            // Ispišite sve elemente niza jedno ispod drugog
+            Console.WriteLine(niz[0]);
+            Console.WriteLine(niz[1]);
+            Console.WriteLine(niz[2]);
+            Console.WriteLine(niz[3]);
+            Console.WriteLine(niz[4]);
 
+             int i=0;
+            // uvećaj i za 1 
+            i = i + 1;
+            i += 1;
+            i++; // ++i
 
         }
-
     }
 }

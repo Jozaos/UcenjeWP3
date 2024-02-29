@@ -2,29 +2,32 @@
 
 using UcenjeCS;
 
-new UcenjeCS.E14VjezbanjeRadaSObjektima.Program();
+new UcenjeCS.E15Polimorfizam.Program();
 
-//new UcenjeCS.E13Nasljedivanje.Program();
+//new UcenjeCS.E14VjezbanjeRadaSObjektima.Program();
+
+// kada vidimo ključnu riječ new poziva se konstruktor
+
+//new UcenjeCS.E13Nasljedivanje.Program(); // pozvao sam konstruktor od Programa u E13...
 
 //UcenjeCS.E12KlasaObjekt.Program.Izvedi();
 
 //E11Rekurzija.Izvedi();
 
-//Z07.Izvedi();
-
 //Z06.Izvedi();
 
+// Kada se metoda poziva na klasi (što je ovdje slučaj) ona je static
 //E10Metode.Izvedi();
 
-//E09ForEachPetlja.Izvedi();
+//Subota1.Izvedi();
 
-//E08DoWhilePetlja.Izvedi();
+//E09Foreach.Izvedi();
+
+//E08DoWhile.Izvedi();
 
 //E07WhilePetlja.Izvedi();
 
 //Z05.Izvedi();
-
-//Z04.Izvedi();
 
 //E06ForPetlja.Izvedi();
 

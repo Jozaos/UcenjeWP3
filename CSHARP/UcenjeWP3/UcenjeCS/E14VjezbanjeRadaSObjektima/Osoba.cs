@@ -8,9 +8,10 @@ namespace UcenjeCS.E14VjezbanjeRadaSObjektima
 {
     internal class Osoba
     {
+
         public string? Ime { get; set; }
         public string? Prezime { get; set; }
-        public int? Dob { get; set; }
+        public int Dob { get; set; }
 
         public override string ToString()
         {

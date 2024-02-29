@@ -8,81 +8,82 @@ namespace UcenjeCS
 {
     internal class Pomocno
     {
-        public static int UcitajCijeliBroj(string Poruka)
+        public static int UcitajCijeliBroj(string poruka)
         {
-            
-
-            while (true)
-            {
-                Console.Write(Poruka+": ");
-                  try
-                  {
-                     return int.Parse(Console.ReadLine());
-                  }
-                 catch (Exception)
-                 {
-                        Console.WriteLine("Nisi unio cijeli broj");
-                 }
+            while (true) { 
+                Console.Write(poruka + ": ");
+                try
+                {
+                    return int.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Nisi unio cijeli broj");
+                }
             }
         }
 
-
-        public static int UcitajCijeliBroj(string Poruka, int min, int max)
+        public static int UcitajCijeliBroj(string poruka, int min, int max)
         {
             int i;
-            while (true)
+            while(true)
             {
-                i=UcitajCijeliBroj(Poruka);
+                i=UcitajCijeliBroj(poruka);
                 if(i<min || i > max)
                 {
-                    Console.WriteLine("Učitani broj nije u danom rasponu "+min+" - "+max);
+                    Console.WriteLine("Učitani broj nije u danom rasponu " + min + " - " + max);
                     continue;
                 }
                 return i;
             }
             
+
         }
 
-
-        public static float UcitajDecimalniBroj(string Poruka)
+        public static float UcitajDecimalniBroj(string poruka)
         {
             while (true)
             {
-                Console.Write(Poruka + ": ");
+                Console.Write(poruka + ": ");
                 try
                 {
                     return float.Parse(Console.ReadLine());
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Nisi unio decimalni broj");
+                    Console.WriteLine("Nisi unio cijeli broj");
                 }
             }
         }
-        //napisi metodu koja prima string poruku i vraca string koji ne smije biti prazan
 
-        public static string UcitajString(string Poruka)
+        // Napišite metodu koja prima string poruku i vraća
+        // string koji ne smije biti prazan
+        // metoda se zove UcitajString
+
+        public static string UcitajString(string poruka)
         {
             string s;
             for(; ; )
             {
-                Console.Write(Poruka+": ");
+                Console.Write(poruka + ": ");
                 s = Console.ReadLine().Trim();
-                if (s.Length == 0)
+                if(s.Length==0)
                 {
                     Console.WriteLine("Obavezan unos");
                     continue;
                 }
+
                 try
                 {
                     int.Parse(s);
                     Console.WriteLine("Unos ne smije biti cijeli broj");
                     continue;
                 }
-                catch (Exception)
+                catch(Exception)
                 {
 
                 }
+
                 try
                 {
                     float.Parse(s);
@@ -93,12 +94,10 @@ namespace UcenjeCS
                 {
 
                 }
+
+
                 return s;
-
             }
-
         }
-
-
     }
 }

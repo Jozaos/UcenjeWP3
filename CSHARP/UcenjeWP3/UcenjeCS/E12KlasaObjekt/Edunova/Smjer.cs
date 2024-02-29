@@ -13,5 +13,8 @@ namespace UcenjeCS.E12KlasaObjekt.Edunova
         public int? Trajanje { get; set; }
         public decimal? Cijena { get; set; }
         public bool? Vaucer { get; set; }
+
+
+
     }
 }

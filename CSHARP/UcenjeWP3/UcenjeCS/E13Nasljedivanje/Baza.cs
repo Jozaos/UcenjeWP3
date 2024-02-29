@@ -8,11 +8,11 @@ namespace UcenjeCS.E13Nasljedivanje
 {
     internal class Baza
     {
-        public Baza(string Naziv) {
-            this.Naziv = Naziv;
+        public Baza(string naziv) {
+            this.Naziv = naziv;
         }
-        public string? Naziv { get; set; }
 
+        public string Naziv { get; set; }
 
     }
 }

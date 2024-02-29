@@ -1,39 +1,36 @@
 ﻿using System;
-using System.Buffers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//klasa je opisnik objekta, konstruktor je metoda u klasi koja se poziva sa "new", objekt je instanca klase
+
 namespace UcenjeCS.E14VjezbanjeRadaSObjektima
 {
     internal class Program
     {
+
         private List<Osoba> Osobe;
+
+        /// <summary>
+        /// Kreirati aplikaciju koja unosi, pregledava, mijenja i briše osobe
+        /// </summary>
         public Program()
         {
-            Osobe= new List<Osoba>();
+            // konstruktor služi da bi konstruirao potrebne zavisnosti
+            Osobe = new List<Osoba>();
             TestPodaci();
             PozdravnaPoruka();
             Izbornik();
-            
-
-
-
         }
 
         private void TestPodaci()
         {
-            Osobe.Add(new()
-            { Ime = "Ana", Prezime = "Malenica", Dob = 52 });
-            Osobe.Add(new()
-            { Ime = "Petar", Prezime = "Klarik", Dob = 25 });
+            Osobe.Add(new() { Ime = "Ana", Prezime = "Kat", Dob = 12 });
+            Osobe.Add(new() { Ime = "Marko", Prezime = "Kekin", Dob = 14 });
         }
 
         private void Izbornik()
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("** Izbornik **");
             Console.WriteLine("1. Pregled osoba");
             Console.WriteLine("2. Unos nove osobe");
             Console.WriteLine("3. Promjena osobe");
@@ -41,40 +38,29 @@ namespace UcenjeCS.E14VjezbanjeRadaSObjektima
             Console.WriteLine("5. Izlaz iz programa");
             OdaberiOpciju();
         }
+
         private void OdaberiOpciju()
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            switch (Pomocno.UcitajCijeliBroj("Odaberi opciju "))
+            switch (Pomocno.UcitajCijeliBroj("Odaberi opciju"))
             {
-               
                 case 1:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
                     PrikaziOsobe(true);
                     break;
                 case 2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("** 2. Unos nove osobe **");
                     UnosNoveOsobe();
                     break;
                 case 3:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("** 3. Promjena osobe **");
                     PromjenaOsobe();
                     break;
                 case 4:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("** 4. Brisanje osobe **");
                     BrisanjeOsobe();
                     break;
                 case 5:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Program je gotov, doviđenja");
+                    Console.WriteLine("Program je završio, Doviđenja");
                     return;
                 default:
-                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Nije dobra opcija");
                     Console.WriteLine("*****************");
-                    Izbornik();
                     break;
             }
             Izbornik();
@@ -82,40 +68,42 @@ namespace UcenjeCS.E14VjezbanjeRadaSObjektima
 
         private void BrisanjeOsobe()
         {
-
             if (Osobe.Count == 0)
             {
-                Console.WriteLine("Nema osoba, ne mozemo brisati podatke.");
+                Console.WriteLine("Nema osoba za mijenjat");
                 return;
             }
+            Console.WriteLine("**********************");
+            Console.WriteLine("*** Brisanje Osobe ***");
+            Console.WriteLine("**********************");
             PrikaziOsobe();
-            Console.ForegroundColor = ConsoleColor.Red;
-            int Izbor = Pomocno.UcitajCijeliBroj("Izaberi broj osobe koju brišeš", 0, Osobe.Count);
-            if (Izbor == 0)
+            int izbor = Pomocno.UcitajCijeliBroj("Izaberi broj osobe", 0, Osobe.Count);
+            if(izbor == 0)
             {
                 return;
             }
-            Osobe.RemoveAt(Izbor-1);
+            Osobe.RemoveAt(izbor - 1);
         }
 
         private void PromjenaOsobe()
-        {
+        {   
             if(Osobe.Count == 0)
             {
-                Console.WriteLine("Nema osoba, ne mozemo brisati podatke.");
+                Console.WriteLine("Nema osoba za mijenjat");
                 return;
             }
             PrikaziOsobe();
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            int Izbor = Pomocno.UcitajCijeliBroj("Izaberi broj osobe (0 -> ODUSTANI)",0,Osobe.Count);
-            if(Izbor==0)
+            int izbor = Pomocno.UcitajCijeliBroj("Izaberi broj osobe (0 odustani)", 0, Osobe.Count);
+            if(izbor == 0)
             {
                 return;
             }
-            var o = Osobe[Izbor - 1];
-            o.Ime = Pomocno.UcitajString("Ucitaj ime ["+o.Ime+"]");
-            o.Prezime = Pomocno.UcitajString("Ucitaj Prezime ["+o.Prezime+"]");
-            o.Dob = Pomocno.UcitajCijeliBroj("Ucitaj dob ["+o.Dob+"]");
+            var o = Osobe[izbor - 1];
+            o.Ime = Pomocno.UcitajString("Ucitaj ime [" + o.Ime + "]");
+            o.Prezime = Pomocno.UcitajString("Ucitaj prezime");
+            o.Dob = Pomocno.UcitajCijeliBroj("Ucitaj Dob");
+
+
 
         }
 
@@ -125,33 +113,37 @@ namespace UcenjeCS.E14VjezbanjeRadaSObjektima
             {
                 Ime = Pomocno.UcitajString("Unesi ime osobe"),
                 Prezime = Pomocno.UcitajString("Unesi prezime osobe"),
-                Dob = Pomocno.UcitajCijeliBroj("Unesi dob osobe")
+                Dob = Pomocno.UcitajCijeliBroj("Unesi dob osobe: ")
             });
-            
         }
 
-        private void PrikaziOsobe(bool PrikaziNaslov=false)
-        {
-            if (PrikaziNaslov == true)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("****************");
-                Console.WriteLine("** Osobe u sustavu **");
-                Console.WriteLine("****************");
-            }
+        private void PrikaziOsobe(bool PrikaziNaslov = false)
 
-            if (Osobe.Count == 0)
+
+        {
+            if (PrikaziNaslov)
+
             {
-                Console.WriteLine("Nema ni jedne osobe u sustavu. Unesi novu osobu (2)");
+
+                Console.WriteLine("*********************");
+                Console.WriteLine("** Osobe u sustavu **");
+                Console.WriteLine("*********************");
+
+            }
+            if (Osobe.Count == 0)
+            { 
+            Console.WriteLine("Nema ni jedne osobe u sustavu");
                 return;
             }
 
             int i = 1;
+
             foreach (var o in Osobe)
             {
                 Console.WriteLine(i++ + ". " + o);
+
             }
-            Console.WriteLine("****************");
+            Console.WriteLine("*********************");
         }
 
         private void PozdravnaPoruka()
