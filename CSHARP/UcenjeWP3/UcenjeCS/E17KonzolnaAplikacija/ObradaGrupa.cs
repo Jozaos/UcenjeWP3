@@ -11,11 +11,27 @@ namespace UcenjeCS.E17KonzolnaAplikacija
         public ObradaGrupa(Izbornik izbornik):this()
         {
             this.Izbornik = izbornik;
+            if (Pomocno.dev)
+            {
+                TestniPodaci();
+            }
         }
 
         public ObradaGrupa() 
         {
-            Grupe = new List<Grupa>();       
+            Grupe = new List<Grupa>();
+        }
+
+        private void TestniPodaci()
+        {
+            Grupe.Add(new Grupa()
+            {
+                Sifra=1,
+                Naziv="WP3",
+                Smjer = Izbornik.ObradaSmjer.Smjerovi[0],
+                Polaznici = Izbornik.ObradaPolaznik.Polaznici,
+                DatumPocetka = DateTime.Now
+            });
         }
 
         public void PrikaziIzbornik()
@@ -129,7 +145,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             int b = 1;
             foreach(Grupa grupa in Grupe)
             {
-                Console.WriteLine("{0}. {1}",b++,grupa.Naziv);
+                Console.WriteLine("{0}. {1}",b++,grupa.Naziv+", "+grupa.Smjer.Naziv);
             }
             Console.WriteLine("------------------");
         }

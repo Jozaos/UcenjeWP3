@@ -7,10 +7,10 @@ namespace UcenjeCS.E17KonzolnaAplikacija
         public ObradaPolaznik ObradaPolaznik { get; }
 
         private ObradaGrupa ObradaGrupa;
-
+        //napravit klasu predavac, obradu predavac, dodat u izbornik
         public Izbornik() 
         {
-            Pomocno.dev = false;
+            Pomocno.dev = true;
             ObradaSmjer = new ObradaSmjer();
             ObradaPolaznik = new ObradaPolaznik();
             ObradaGrupa=new ObradaGrupa(this);

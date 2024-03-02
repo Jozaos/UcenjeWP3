@@ -4,17 +4,17 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 {
     internal class ObradaSmjer
     {
-        public List<Smjer> Smjerovi { get;  }
+        public List<Smjer> Smjerovi { get; }
 
-        public ObradaSmjer() 
+        public ObradaSmjer()
         {
             Smjerovi = new List<Smjer>();
             if (Pomocno.dev)
             {
                 TestniPodaci();
             }
-            
-        
+
+
         }
 
         public void PrikaziIzbornik()
@@ -25,7 +25,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             Console.WriteLine("3. Promjena postojećeg smjera");
             Console.WriteLine("4. Brisanje smjera");
             Console.WriteLine("5. Povratak na glavni izbornik");
-            switch(Pomocno.ucitajBrojRaspon("Odaberite stavku izbornika smjera: ",
+            switch (Pomocno.ucitajBrojRaspon("Odaberite stavku izbornika smjera: ",
                 "Odabir mora biti 1-5", 1, 5))
             {
                 case 1:
@@ -70,7 +70,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
         {
             PrikaziSmjerove();
             int index = Pomocno.ucitajBrojRaspon("Odaberi redni broj smjera: ", "Nije dobar odabir", 1, Smjerovi.Count());
-            Smjerovi.RemoveAt(index-1);
+            Smjerovi.RemoveAt(index - 1);
         }
 
         private void UnosNovogSmjera()
@@ -95,29 +95,42 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             Console.WriteLine("---- Smjerovi ----");
             Console.WriteLine("------------------");
             int b = 1;
-            foreach(Smjer smjer in Smjerovi)
+            foreach (Smjer smjer in Smjerovi)
             {
-                Console.WriteLine("{0}. {1}",b++,smjer.Naziv);
+                //Console.WriteLine("{0}. {1} ",b++,smjer.Naziv);
+                Console.WriteLine(b++ + ". " + smjer.Naziv + " (" + smjer.Trajanje + ")," + " cijena: " + smjer.Cijena + " eur");
             }
             Console.WriteLine("------------------");
         }
 
         private void TestniPodaci()
         {
-            Smjerovi.Add(new Smjer { 
-                Sifra=1,
-                Naziv= "Web programiranje",
-            Trajanje=250,
-            Cijena=1000,
-            Upisnina=50,
-            Verificiran=true});
+            Smjerovi.Add(new Smjer
+            {
+                Sifra = 1,
+                Naziv = "Web programiranje",
+                Trajanje = 250,
+                Cijena = 1400,
+                Upisnina = 50,
+                Verificiran = true
+            });
 
             Smjerovi.Add(new Smjer
             {
                 Sifra = 2,
                 Naziv = "Java programiranje",
                 Trajanje = 130,
-                Cijena = 1000,
+                Cijena = 950,
+                Upisnina = 50,
+                Verificiran = true
+            });
+
+            Smjerovi.Add(new Smjer
+            {
+                Sifra = 3,
+                Naziv = "Serviser",
+                Trajanje = 140,
+                Cijena = 600,
                 Upisnina = 50,
                 Verificiran = true
             });
