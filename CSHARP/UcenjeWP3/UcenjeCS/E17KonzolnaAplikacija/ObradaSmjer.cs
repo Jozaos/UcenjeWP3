@@ -19,6 +19,7 @@ namespace UcenjeCS.E17KonzolnaAplikacija
 
         public void PrikaziIzbornik()
         {
+            
             Console.WriteLine("Izbornik za rad s smjerovima");
             Console.WriteLine("1. Pregled postojećih smjerova");
             Console.WriteLine("2. Unos novog smjera");
@@ -29,19 +30,23 @@ namespace UcenjeCS.E17KonzolnaAplikacija
                 "Odabir mora biti 1-5", 1, 5))
             {
                 case 1:
+                    Console.Clear();
                     PrikaziSmjerove();
                     PrikaziIzbornik();
                     break;
                 case 2:
                     UnosNovogSmjera();
+                    Console.Clear();
                     PrikaziIzbornik();
                     break;
                 case 3:
                     PromjenaSmjera();
+                    Console.Clear();
                     PrikaziIzbornik();
                     break;
                 case 4:
                     BrisanjeSmjera();
+                    Console.Clear();
                     PrikaziIzbornik();
                     break;
                 case 5:
@@ -97,43 +102,52 @@ namespace UcenjeCS.E17KonzolnaAplikacija
             int b = 1;
             foreach (Smjer smjer in Smjerovi)
             {
-                //Console.WriteLine("{0}. {1} ",b++,smjer.Naziv);
-                Console.WriteLine(b++ + ". " + smjer.Naziv + " (" + smjer.Trajanje + ")," + " cijena: " + smjer.Cijena + " eur");
+                //Console.WriteLine("{0}. {1} ({2})",b++,smjer.Naziv,smjer.Trajanje);
+                Console.WriteLine(b++ + ". " + smjer.Naziv + " (" + smjer.Trajanje + ")");
             }
             Console.WriteLine("------------------");
         }
 
         private void TestniPodaci()
         {
+
             Smjerovi.Add(new Smjer
             {
                 Sifra = 1,
                 Naziv = "Web programiranje",
                 Trajanje = 250,
-                Cijena = 1400,
+                Cijena = 1000,
                 Upisnina = 50,
                 Verificiran = true
             });
 
+            // dodaj smjer
             Smjerovi.Add(new Smjer
             {
                 Sifra = 2,
                 Naziv = "Java programiranje",
                 Trajanje = 130,
-                Cijena = 950,
+                Cijena = 1000,
                 Upisnina = 50,
                 Verificiran = true
             });
+            // završilo dodavanje smjera
 
+
+            // dodaj smjer
             Smjerovi.Add(new Smjer
             {
                 Sifra = 3,
                 Naziv = "Serviser",
-                Trajanje = 140,
-                Cijena = 600,
+                Trajanje = 130,
+                Cijena = 1000,
                 Upisnina = 50,
                 Verificiran = true
             });
+            // završilo dodavanje smjera
+
+
+
         }
     }
 }
