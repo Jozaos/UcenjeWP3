@@ -25,6 +25,7 @@ namespace EdunovaAPP.Controllers
         {
             return new JsonResult(_context.Smjerovi.ToList());
         }
+
         [HttpPost]
         public IActionResult Post(Smjer smjer)
         {
@@ -35,13 +36,14 @@ namespace EdunovaAPP.Controllers
 
         [HttpPut]
         [Route("{sifra:int}")]
-        public IActionResult Put(int sifra, Smjer smjer) 
+        public IActionResult Put(int sifra, Smjer smjer)
         {
             var smjerIzBaze = _context.Smjerovi.Find(sifra);
+            // za sada ručno, kasnije će doći Mapper
             smjerIzBaze.Naziv = smjer.Naziv;
-            smjerIzBaze.Trajanje = smjer.Trajanje;
-            smjerIzBaze.Cijena = smjer.Cijena;
-            smjerIzBaze.Verificiran = smjer.Verificiran;
+            smjerIzBaze.Trajanje= smjer.Trajanje;
+            smjerIzBaze.Cijena= smjer.Cijena;
+            smjerIzBaze.Verificiran=smjer.Verificiran;
 
             _context.Smjerovi.Update(smjerIzBaze);
             _context.SaveChanges();
@@ -57,7 +59,7 @@ namespace EdunovaAPP.Controllers
             var smjerIzBaze = _context.Smjerovi.Find(sifra);
             _context.Smjerovi.Remove(smjerIzBaze);
             _context.SaveChanges();
-            return new JsonResult(new {poruka="Obrisano"});
+            return new JsonResult(new { poruka="Obrisano"});
         }
 
     }
