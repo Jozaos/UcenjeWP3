@@ -17,8 +17,7 @@ namespace UcenjeCS.E20Ekstenzije
             g.OdradiPosao();
             s.OdradiPosao();
 
-            var go = new Goran();
-            go.OdradiPosao();
+
         }
     }
 }

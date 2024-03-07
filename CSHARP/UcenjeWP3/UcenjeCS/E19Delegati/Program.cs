@@ -11,7 +11,6 @@ namespace UcenjeCS.E19Delegati
         public Program() {
             new PrimjerKoristenja1();
             new PrimjerKoristenja2();
-            new PrimjerKoristenja3();
         }
     }
 }
