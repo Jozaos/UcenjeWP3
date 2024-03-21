@@ -1,15 +1,16 @@
-import HttpService from "./HttpService"
+import {HttpService} from "./HttpService"
 
-const naziv='/Smjer'
+const naziv = '/Smjer'
 
 async function get(){
     return await HttpService.get(naziv)
     .then((odgovor)=>{
-        // console.table(odgovor.data);
-        return odgovor.data
+        //console.table(odgovor.data);
+        return odgovor.data;
     })
     .catch((e)=>{
-        console.log(e);
+        //console.log(e);
+        return e;
     })
 }
 
