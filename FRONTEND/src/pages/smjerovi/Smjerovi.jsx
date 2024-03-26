@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import SmjerService from '../../services/SmjerService';
 import { Button, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { RoutesNames } from '../../constants';
+import {RoutesNames} from '../../constants'
 
 
 export default function Smjerovi(){
@@ -37,8 +37,8 @@ export default function Smjerovi(){
     }
 
     async function obrisiAsync(sifra){
-        const odgovor= await SmjerService._delete(sifra);
-        if(odgovor.greska){
+        const odgovor = await SmjerService._delete(sifra);
+        if (odgovor.greska){
             console.log(odgovor.poruka);
             alert('Pogledaj konzolu');
             return;
@@ -53,8 +53,7 @@ export default function Smjerovi(){
     return(
         <>
            <Container>
-            <Link to={RoutesNames.SMJER_NOVI}>Dodaj</Link>
-
+            <Link to={RoutesNames.SMJER_NOVI}> Dodaj </Link>
             <Table striped bordered hover responsive>
                     <thead>
                         <tr>
@@ -80,7 +79,12 @@ export default function Smjerovi(){
                                     */}
                                 </td>
                                 <td>
-                                    <Button onClick={()=>obrisi(smjer.sifra)}>Obriši</Button>
+                                    <Button 
+                                    onClick={()=>obrisi(smjer.sifra)}
+                                    variant='danger'
+                                    >
+                                        Obriši
+                                    </Button>
                                 </td>
                             </tr>
                         ))}
